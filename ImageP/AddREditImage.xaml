@@ -3,77 +3,63 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ImageP"
         mc:Ignorable="d"
         Title="AddREditImage" Height="450" Width="800" ResizeMode="NoResize">
 
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-
-        </Grid.RowDefinitions>
 
         <Button Click="selectImage">
             <WrapPanel>
-                <Image Source="{Binding Path}"></Image>
+                <Image Source="{Binding Path}" />
             </WrapPanel>
         </Button>
         <StackPanel Grid.Column="1" VerticalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="10,0">     Image Path</TextBlock>
-                <TextBox MinWidth="100" Text="{Binding Path ,UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                <Button Content="Select Image" Click="selectImage" Margin="10,0"></Button>
+                <TextBox MinWidth="100" Text="{Binding Path ,UpdateSourceTrigger=PropertyChanged}" />
+                <Button Content="Select Image" Click="selectImage" Margin="10,0" />
             </StackPanel>
 
-            <Label Content="Tags" Margin="5,10"></Label>
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,10" >
-                <TextBox MinWidth="100" Name="TagTB" KeyDown="TagTB_OnKeyDown">
-                </TextBox>
-                <Button Name="addtag"  Content="Add Tag" Width="80" Margin="5,0" HorizontalAlignment="Right" Click="addTag">
-
-                </Button>
+            <Label Content="Tags" Margin="5,10" />
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,10">
+                <TextBox MinWidth="100" Name="TagTB" KeyDown="TagTB_OnKeyDown" />
+                <Button Name="addtag" Content="Add Tag" Width="80" Margin="5,0" HorizontalAlignment="Right"
+                        Click="addTag" />
             </StackPanel>
 
             <StackPanel>
 
-                <ListView Name="lwTags" MaxHeight="250"  Margin="10,0,0,0">
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    </Style>
-                </ListView.ItemContainerStyle>
+                <ListView Name="lwTags" MaxHeight="250" Margin="10,0,0,0">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
 
-                <ListView.ItemTemplate >
-                    <DataTemplate  >
-                        <Border BorderBrush="Black" BorderThickness="0,0,0,1" Margin="-6,0,-6,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Margin="-6,0,-6,0">
 
-                        <Grid HorizontalAlignment="Stretch"  Margin="0,1,10,0" >
-                            <Label Content="{Binding .}"></Label>
-                            <Button Content="Delete Tag" HorizontalAlignment="Right" Click="deleteTag"></Button>
-                            
-                        </Grid>
-                        </Border>
-                    </DataTemplate>
+                                <Grid HorizontalAlignment="Stretch" Margin="0,1,10,0">
+                                    <Label Content="{Binding .}" />
+                                    <Button Content="Delete Tag" HorizontalAlignment="Right" Click="deleteTag" />
 
-                </ListView.ItemTemplate>
-            </ListView>
-            <WrapPanel  Margin="10,10" VerticalAlignment="Bottom">
-                <Button Content="Save Image" Click="saveImage" Width="80" Height="25"></Button>
-                <Button Content="Cancel" Click="Close" IsCancel="True" Margin="10,0" Width="70"></Button>
-            </WrapPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+                <WrapPanel Margin="10,10" VerticalAlignment="Bottom">
+                    <Button Content="Save Image" Click="saveImage" Width="80" Height="25" />
+                    <Button Content="Cancel" Click="Close" IsCancel="True" Margin="10,0" Width="70" />
+                </WrapPanel>
             </StackPanel>
-
-
-
-
-
-
-
 
 
         </StackPanel>

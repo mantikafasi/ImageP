@@ -3,20 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ImageP"
         mc:Ignorable="d"
         Title="ImageP" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Margin="10,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" ></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*" ></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <TextBox HorizontalAlignment="Stretch" Name="searchBox" TextChanged="searchData"  VerticalContentAlignment="Center"  >
+            <TextBox HorizontalAlignment="Stretch" Name="searchBox" TextChanged="searchData"
+                     VerticalContentAlignment="Center">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
@@ -39,16 +39,16 @@
                         </Style.Triggers>
                     </Style>
                 </TextBox.Style>
-            </TextBox >
+            </TextBox>
             <Button Width="100" HorizontalAlignment="Right" Click="addPhoto" Grid.Column="1">
                 <WrapPanel>
-                    <TextBlock Text="Add Image"></TextBlock>
+                    <TextBlock Text="Add Image" />
                 </WrapPanel>
             </Button>
 
 
         </Grid>
-        
+
         <ListView Name="ImageList" Grid.Row="1" Margin="0,10,0,0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -56,18 +56,20 @@
                 </Style>
             </ListView.ItemContainerStyle>
 
-            <ListView.ItemTemplate >
-                <DataTemplate >
-                    <Grid PreviewMouseUp="onObjectClict" Background="Transparent" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid PreviewMouseUp="onObjectClict" Background="Transparent">
 
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="{Binding Path}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Height="50" Stretch="Fill"></Image>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Path}" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                   Width="100" Height="50" Stretch="Fill" />
 
-                            <Label Content="{Binding TagsStr}" VerticalAlignment="Center"></Label>
+                            <Label Content="{Binding TagsStr}" VerticalAlignment="Center" />
 
                         </StackPanel>
-                        
-                        <Button Content="Copy" Width="80" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" Click="CopyImage"></Button>
+
+                        <Button Content="Copy" Width="80" Height="30" VerticalAlignment="Center"
+                                HorizontalAlignment="Right" Click="CopyImage" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
